@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="java.time.format.DateTimeFormatter"/>
+        <import type="java.time.format.FormatStyle"/>
+        <variable
+            name="clientService"
+            type="com.velveteyebrows.dto.ClientServiceDTO" />
+        <variable
+            name="service"
+            type="com.velveteyebrows.dto.ServiceDTO"
+            />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/nimg_mainImage"
+                android:layout_width="150dp"
+                android:layout_height="100dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceSubtitle1"
+                    android:textSize="19dp"
+                    android:textColor="@color/headTextColor"
+                    tools:text="Title"
+                    android:text="@{service.title}"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/bodyTextColor"
+                        android:textSize="14dp"
+                        android:text="@{service.finalCost + ` ₽`}"
+                        tools:text="cost"/>
+                    <TextView
+                        android:id="@+id/tv_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14dp"
+                        android:text="@{` - ` + service.duration + ` min`}"
+                        tools:text=" duration"
+                        android:textColor="@color/bodyTextColor"
+
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:textColor="@color/bodyTextColor"
+                    android:text="@{clientService.startTime.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG))}"
+                    tools:text="date"/>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

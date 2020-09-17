@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="services">
+        <item quantity="one">%d service</item>
+        <item quantity="few">%d services</item>
+        <item quantity="many">%d services</item>
+        <item quantity="other">%d services</item>
+    </plurals>
+</resources>

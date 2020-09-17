@@ -1,0 +1,61 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/secondaryColor</item>
+        <item name="android:textColorPrimary">@color/primaryTextColor</item>
+    </style>
+
+    <style name="AppThemeActionbar" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/secondaryColor</item>
+        <item name="android:textColorPrimary">@color/primaryTextColor</item>
+    </style>
+    
+    <style name="SplashScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:background">@drawable/logo_layout</item>
+    </style>
+
+    <style name="VelvetEyebrows.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:theme">?theme</item>
+        <item name="android:background">?android:colorPrimary</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="VelvetEyebrows.TextAppearance.CardBody" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/bodyTextColor</item>
+    </style>
+
+    <style name="VelvetEyebrows.Backdrop" parent="AppTheme">
+        <item name="android:textColorPrimary">@color/onPrimary</item>
+    </style>
+
+
+    <style name="VelvetEyebrows.EditText" parent="">
+        <item name="maxLines">1</item>
+        <item name="android:textAppearance">@style/VelvetEyebrows.EditText.TextApearance</item>
+    </style>
+
+    <style name="VelvetEyebrows.EditText.TextApearance" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:textColor">@color/bodyTextColor</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+    <style name="Theme.VelvetEyebrows.Calendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/secondaryColor</item>
+        <item name="colorPrimaryDark">@color/secondaryDarkColor</item>
+        <item name="colorAccent">@color/primaryColor</item>
+    </style>
+
+</resources>

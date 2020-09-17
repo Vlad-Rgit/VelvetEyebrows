@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.MainActivity"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout_main"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/frame_main"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_main"
+            style="@style/VelvetEyebrows.Toolbar"
+            app:title="Velvet Eyebrows"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:elevation="0dp"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:id="@+id/back_layer_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="?colorPrimary"
+        app:elevation="0dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/front_layer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:background="@drawable/front_lyer_background"
+            android:elevation="6dp"
+
+       >
+
+        <FrameLayout
+                android:id="@+id/frame_main"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/btm_nav_main"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                />
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/btm_nav_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:colorPrimary"
+                app:itemIconTint="@color/nav_color"
+                app:itemTextColor="@color/nav_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:menu="@menu/main_naviagtion_menu"
+                />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

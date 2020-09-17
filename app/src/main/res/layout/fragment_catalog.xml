@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+             tools:context=".fragments.CatalogFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_catalog_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="8dp"
+            android:text="Catalog"
+            android:textAppearance="?attr/textAppearanceHeadline5"/>
+
+        <View
+            style="@style/Divider"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"/>
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/swp_catalog"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                            >
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_discountServices"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                    />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_no_search_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"   
+        android:textColor="@color/hintTextColor"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:textAllCaps="true"
+        android:text="No found"/>
+
+</FrameLayout>
